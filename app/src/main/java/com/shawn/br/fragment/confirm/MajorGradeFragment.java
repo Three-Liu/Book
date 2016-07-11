@@ -1,5 +1,6 @@
 package com.shawn.br.fragment.confirm;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,10 +12,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.shawn.br.CenterActivity;
 import com.shawn.br.Person;
 import com.shawn.br.R;
 
 /**
+ * This fragment
+ *         select major and grade(First)
  * Created by Three on 2016/7/11.
  */
 public class MajorGradeFragment extends Fragment implements AdapterView.OnItemSelectedListener{
@@ -45,6 +49,8 @@ public class MajorGradeFragment extends Fragment implements AdapterView.OnItemSe
         view.findViewById(R.id.confirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CenterActivity.class));
+                getActivity().finish();
             }
         });
         return view;

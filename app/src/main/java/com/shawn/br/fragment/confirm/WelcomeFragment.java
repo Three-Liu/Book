@@ -1,5 +1,6 @@
 package com.shawn.br.fragment.confirm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.shawn.br.CenterActivity;
 import com.shawn.br.R;
 
 /**
@@ -33,7 +35,8 @@ public class WelcomeFragment extends Fragment {
         view.findViewById(R.id.old).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Switch to Next Activity
+                startActivity(new Intent(getActivity(), CenterActivity.class));
+                getActivity().finish();
             }
         });
         view.findViewById(R.id.exit).setOnClickListener(new View.OnClickListener() {
