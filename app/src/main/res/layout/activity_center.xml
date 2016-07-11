@@ -5,11 +5,20 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context="com.shawn.br.CenterActivity">
-    <FrameLayout
-        android:id="@+id/center_container"
+    <SearchView
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"/>
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search"/>
+    <FrameLayout
+        android:id="@+id/center_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -21,13 +30,15 @@
             android:textAllCaps="false"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            style="?attr/borderlessButtonStyle"/>
         <Button
             android:id="@+id/me"
             android:text="@string/me_btn"
             android:textAllCaps="false"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            style="?attr/borderlessButtonStyle"/>
     </LinearLayout>
 </RelativeLayout>
