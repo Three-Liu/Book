@@ -12,19 +12,22 @@
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        style="?attr/borderlessButtonStyle"/>
     <Button
         android:id="@+id/old"
         android:text="@string/old_user"
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        style="?attr/borderlessButtonStyle"/>
     <Button
         android:id="@+id/exit"
         android:text="@string/exit"
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        style="?attr/borderlessButtonStyle"/>
 </LinearLayout>
