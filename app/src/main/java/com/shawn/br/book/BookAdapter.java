@@ -26,18 +26,27 @@ public class BookAdapter extends ArrayAdapter<Book> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = null;
+        View view;
         Book book = getItem(position);
+        ViewHolder viewHolder;
         if (convertView == null) {
+            viewHolder = new ViewHolder();
             view = LayoutInflater.from(getContext()).inflate(idResource, null);
+            viewHolder.image = (ImageView) view.findViewById(R.id.bookImage);
+            viewHolder.tw = (TextView) view.findViewById(R.id.bookTitle);
+            view.setTag(viewHolder);
         } else {
             view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
         }
-        ImageView image = (ImageView) view.findViewById(R.id.bookImage);
-        image.setImageResource(book.getImageId());
-        TextView tw = (TextView) view.findViewById(R.id.bookTitle);
-        tw.setText(book.getName());
+        viewHolder.image.setImageResource(book.getImageId());
+        viewHolder.tw.setText(book.getName());
         return view;
     }
-    //will add HolderClass
+
+    // ViewHolder to accelerate ListView
+    class ViewHolder {
+        ImageView image;
+        TextView tw;
+    }
 }

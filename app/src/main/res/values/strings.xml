@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BR</string>
+    <string name="app_name">Book</string>
     <string name="new_guy">New Guy</string>
     <string name="old_user">Old User</string>
     <string name="exit">Exit</string>
