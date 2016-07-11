@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="major">
+        <item>计算机</item>
+        <item>信息安全</item>
+        <item>数字媒体</item>
+        <item>电子信息工程</item>
+        <item>自动化</item>
+        <item>英语</item>
+        <item>建筑学</item>
+    </string-array>
+</resources>

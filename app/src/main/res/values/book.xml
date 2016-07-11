@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="bookImage">
+        <item>@drawable/mathematics</item>
+        <item>@drawable/linear_algebrajpg</item>
+        <item>@drawable/computer_intro</item>
+        <item>@drawable/program_in_c</item>
+        <item>@drawable/think_in_java</item>
+        <item>@drawable/history</item>
+    </integer-array>
+    <string-array name="bookTitle">
+        <item>高等数学</item>
+        <item>线性代数</item>
+        <item>计算机导论</item>
+        <item>C程序设计</item>
+        <item>Think in Java</item>
+        <item>近代史</item>
+    </string-array>
+</resources>
