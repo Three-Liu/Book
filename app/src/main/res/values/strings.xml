@@ -4,4 +4,6 @@
     <string name="old_user">Old User</string>
     <string name="exit">Exit</string>
     <string name="confirm">Confirm</string>
+    <string name="book_btn">Book</string>
+    <string name="me_btn">Me</string>
 </resources>
