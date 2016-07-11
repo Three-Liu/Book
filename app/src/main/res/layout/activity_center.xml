@@ -5,20 +5,17 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context="com.shawn.br.CenterActivity">
-    <SearchView
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/search"/>
     <FrameLayout
         android:id="@+id/center_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.shawn.br.fragment.QuaryFragment"
+            tools:layout="@layout/fragment_quary"/>
+    </FrameLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

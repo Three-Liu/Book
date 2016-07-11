@@ -1,4 +1,4 @@
-package com.shawn.br;
+package com.shawn.br.book;
 
 import android.os.Parcel;
 import android.os.Parcelable;
