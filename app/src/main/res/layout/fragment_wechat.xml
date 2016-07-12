@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        style="?attr/borderlessButtonStyle"/>
+        style=""/>
     <Button
         android:id="@+id/old"
         android:text="@string/old_user"
