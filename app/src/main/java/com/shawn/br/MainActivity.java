@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.container_welcome,new WelcomeFragment(),"wechat")
+                .add(R.id.container_welcome,new WelcomeFragment(),WelcomeFragment.class.getName())
                 .commit();
     }
     public void getInfo(){

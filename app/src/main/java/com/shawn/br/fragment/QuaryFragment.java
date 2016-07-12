@@ -59,14 +59,15 @@ public class QuaryFragment extends Fragment{
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                BookFragment fragment = new BookFragment();
-//                Bundle b = new Bundle();
-//                b.putParcelable("book",(Book)parent.getItemAtPosition(position));
-//                fragment.setArguments(b);
-//                getFragmentManager().beginTransaction()
-//                        .add(R.id.container,fragment,"booklist")
-//                        .addToBackStack("booklist")
-//                        .commit();
+                BookInfoFragment fragment = new BookInfoFragment();
+                Bundle b = new Bundle();
+                b.putParcelable("book",(Book)parent.getItemAtPosition(position));
+                fragment.setArguments(b);
+                getFragmentManager().beginTransaction()
+                        .detach(getFragmentManager().findFragmentByTag(QuaryFragment.class.getName()))
+                        .add(R.id.center_container,fragment,BookInfoFragment.class.getName())
+                        .addToBackStack(BookInfoFragment.class.getName())
+                        .commit();
             }
         });
         return view;
