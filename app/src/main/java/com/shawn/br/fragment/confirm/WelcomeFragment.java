@@ -27,7 +27,7 @@ public class WelcomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 getFragmentManager().beginTransaction()
-                        .detach(getFragmentManager().findFragmentByTag("wechat"))
+                        .detach(getFragmentManager().findFragmentByTag(WelcomeFragment.class.getName()))
                         .add(R.id.container_welcome,new MajorGradeFragment())
                         .commit();
             }
