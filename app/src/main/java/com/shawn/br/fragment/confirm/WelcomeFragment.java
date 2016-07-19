@@ -22,29 +22,7 @@ public class WelcomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_wechat,container,false);
-        view.findViewById(R.id.first).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getFragmentManager().beginTransaction()
-                        .detach(getFragmentManager().findFragmentByTag(WelcomeFragment.class.getName()))
-                        .add(R.id.container_welcome,new MajorGradeFragment())
-                        .commit();
-            }
-        });
-        view.findViewById(R.id.old).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), CenterActivity.class));
-                getActivity().finish();
-            }
-        });
-        view.findViewById(R.id.exit).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().finish();
-            }
-        });
+        View view = inflater.inflate(R.layout.fragment_welcome,container,false);
         return view;
     }
 }
