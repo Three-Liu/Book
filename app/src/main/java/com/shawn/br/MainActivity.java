@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 
-import com.shawn.br.fragment.confirm.WelcomeFragment;
+import com.shawn.br.fragment.WelcomeFragment;
 
 /**
  * In this activity,
@@ -19,10 +19,7 @@ public class MainActivity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.container_welcome,new WelcomeFragment(),WelcomeFragment.class.getName())
+                .add(R.id.container,new WelcomeFragment(),WelcomeFragment.class.getName())
                 .commit();
-    }
-    public void getInfo(){
-        // maybe get information in this method
     }
 }

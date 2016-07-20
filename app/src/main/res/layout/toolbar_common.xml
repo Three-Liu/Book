@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorPrimary"
-    toolbar:navigationIcon="@drawable/previous"
+    toolbar:navigationIcon="@drawable/back_arrow"
     toolbar:title=" ">
 </android.support.v7.widget.Toolbar>

@@ -22,8 +22,7 @@
             android:textAllCaps="false"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            style="@style/btn"/>
+            android:layout_weight="1"/>
         <Button
             android:id="@+id/me"
             android:text="@string/me_btn"

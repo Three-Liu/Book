@@ -8,7 +8,7 @@
     <string name="me_btn">Me</string>
     <string name="search">Search</string>
     <string name="login">Login</string>
-    <string name="login_panel">Login name/tel</string>
-    <string name="password_panel">Enter password</string>
     <string name="register">Register</string>
+    <string name="login_panel">Id</string>
+    <string name="password_panel">Password</string>
 </resources>
