@@ -31,14 +31,24 @@ public class RegisterFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_register,container,false);
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolBar);
         toolbar.setTitle(R.string.register);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.colorFont));
+        toolbar.setNavigationIcon(R.drawable.back_arrow);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getFragmentManager().beginTransaction()
-                        .remove(getFragmentManager().findFragmentByTag(RegisterFragment.class.getName()))
                         .show(getFragmentManager().findFragmentByTag(WelcomeFragment.class.getName()))
                         .commit();
+                getFragmentManager().popBackStack();
+            }
+        });
+        view.findViewById(R.id.confirm).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFragmentManager().beginTransaction()
+                        .show(getFragmentManager().findFragmentByTag(WelcomeFragment.class.getName()))
+                        .remove(getFragmentManager().findFragmentByTag(RegisterFragment.class.getName()))
+                        .commit();
+                //add password confirm or sth
             }
         });
         return view;

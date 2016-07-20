@@ -32,9 +32,9 @@ public class BookAdapter extends ArrayAdapter<Book> {
         if (convertView == null) {
             viewHolder = new ViewHolder();
             view = LayoutInflater.from(getContext()).inflate(idResource, null);
-            viewHolder.image = (ImageView) view.findViewById(R.id.bookImage);
-            viewHolder.tw = (TextView) view.findViewById(R.id.bookTitle);
-            view.setTag(viewHolder);
+//            viewHolder.image = (ImageView) view.findViewById(R.id.bookImage);
+//            viewHolder.tw = (TextView) view.findViewById(R.id.bookTitle);
+//            view.setTag(viewHolder);
         } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();

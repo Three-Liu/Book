@@ -1,6 +1,5 @@
 package com.shawn.br.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.shawn.br.CenterActivity;
 import com.shawn.br.R;
 
 /**
@@ -30,6 +28,15 @@ public class WelcomeFragment extends Fragment {
                         .hide(getFragmentManager().findFragmentByTag(WelcomeFragment.class.getName()))
                         .add(R.id.container,new RegisterFragment(),RegisterFragment.class.getName())
                         .addToBackStack(WelcomeFragment.class.getName())
+                        .commit();
+            }
+        });
+        view.findViewById(R.id.login_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFragmentManager().beginTransaction()
+                        .detach(getFragmentManager().findFragmentByTag(WelcomeFragment.class.getName()))
+                        .add(R.id.container,new CenterFragment(),CenterFragment.class.getName())
                         .commit();
             }
         });

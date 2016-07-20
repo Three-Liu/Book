@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
-                android:theme="@style/Theme.AppCompat.Base"/>
+                android:theme="@style/Theme.EditText"/>
             <TextView
                 android:text="@string/password_panel"
                 android:textSize="15sp"
@@ -55,7 +55,7 @@
                 android:layout_marginBottom="5dp"
                 android:textSize="24sp"
                 android:maxLines="1"
-                android:theme="@style/Theme.AppCompat.Base"/>
+                android:theme="@style/Theme.EditText"/>
         </LinearLayout>
 
         <LinearLayout
@@ -66,23 +66,12 @@
 
             <Button
                 android:id="@+id/login_btn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/login"
-                android:textColor="#fff"
-                android:layout_margin="5dp"
-                android:background="@drawable/btn_background"/>
-
+                style="@style/Theme.Button.Welcome"/>
             <Button
                 android:id="@+id/register_btn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="#fff"
-                android:layout_margin="5dp"
                 android:text="@string/register"
-                android:background="@drawable/btn_background"/>
+                style="@style/Theme.Button.Welcome"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

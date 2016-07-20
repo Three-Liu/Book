@@ -11,4 +11,6 @@
     <string name="register">Register</string>
     <string name="login_panel">Id</string>
     <string name="password_panel">Password</string>
+    <string name="center_book">Book</string>
+    <string name="center_me">Me</string>
 </resources>
