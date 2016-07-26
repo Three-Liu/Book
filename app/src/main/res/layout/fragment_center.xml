@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,27 +9,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true">
-        <include layout="@layout/toolbar_common"/>
+
+        <include layout="@layout/toolbar_common" />
     </FrameLayout>
+
     <FrameLayout
-        android:id="@+id/ceter_container"
+        android:id="@+id/center_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/top_center"/>
+        android:layout_below="@id/top_center">
+        <fragment
+            android:name="com.shawn.br.fragment.BookFragmentSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_center_search" />
+    </FrameLayout>
+
     <LinearLayout
         android:id="@+id/bottom_center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
+
         <Button
             android:id="@+id/center_book"
-            android:text="@string/center_book"
-            android:background="?attr/colorPrimaryDark"
-            style="@style/Theme.Button.Bordless"/>
+            style="@style/Theme.Button.Borderless"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/center_book" />
+
         <Button
             android:id="@+id/center_me"
-            android:text="@string/center_me"
-            android:background="?attr/colorAccent"
-            style="@style/Theme.Button.Bordless"/>
+            style="@style/Theme.Button.Borderless"
+            android:background="@color/colorAccent"
+            android:text="@string/center_me" />
     </LinearLayout>
 </RelativeLayout>

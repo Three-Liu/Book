@@ -1,20 +1,32 @@
-package com.shawn.br;
+package com.shawn.br.person;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.shawn.br.R;
 
 /**
  * Person class (For now)
  * Created by Three on 2016/7/9.
  * version
  *      0.1 - 7/9 (Build by Three)
+ * version
+ *      0.2 - 7/21 (Build by Three)
+ *      remove major,grade attr
  */
 public class Person implements Parcelable {
     private String name = "Default";
-    private String major;
     private String gender;
-    private String grade;
     private int imageId;
+    //    private String major;
+    //    private String grade;
 
     public int getImageId() {
         return imageId;
@@ -34,38 +46,40 @@ public class Person implements Parcelable {
         super();
     }
 
-    @Override
-    public String toString() {
-        return name + '\n' + '\n' + major + '\n' + grade + '\n';
-    }
+//    @Override
+//    public String toString() {
+//        return name + '\n' + '\n' + major + '\n' + grade + '\n';
+//    }
 
-    public Person(String name, String number, String major, String grade) {
-        this.name = name;
-        this.major = major;
-        this.grade = grade;
-    }
+//    public Person(String name, String number, String major, String grade) {
+//        this.name = name;
+//        this.major = major;
+//        this.grade = grade;
+//    }
 
     public Person(Parcel source) {
         this.name = source.readString();
-        this.major = source.readString();
-        this.grade = source.readString();
+        this.gender = source.readString();
+        this.imageId = source.readInt();
+//        this.major = source.readString();
+//        this.grade = source.readString();
     }
 
-    public String getMajor() {
-        return major;
-    }
+//    public String getMajor() {
+//        return major;
+//    }
 
-    public void setMajor(String major) {
-        this.major = major;
-    }
+//    public void setMajor(String major) {
+//        this.major = major;
+//    }
 
-    public String getGrade() {
-        return grade;
-    }
+//    public String getGrade() {
+//        return grade;
+//    }
 
-    public void setGrade(String grade) {
-        this.grade = grade;
-    }
+//    public void setGrade(String grade) {
+//        this.grade = grade;
+//    }
 
     public String getName() {
         return name;
@@ -83,8 +97,8 @@ public class Person implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
-        dest.writeString(this.major);
-        dest.writeString(this.grade);
+        dest.writeString(this.gender);
+        dest.writeInt(this.imageId);
     }
 
 

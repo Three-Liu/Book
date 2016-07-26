@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.shawn.br.R;
+import com.shawn.br.data.PictureToArray;
 
 import java.util.List;
 
@@ -32,15 +33,15 @@ public class BookAdapter extends ArrayAdapter<Book> {
         if (convertView == null) {
             viewHolder = new ViewHolder();
             view = LayoutInflater.from(getContext()).inflate(idResource, null);
-//            viewHolder.image = (ImageView) view.findViewById(R.id.bookImage);
-//            viewHolder.tw = (TextView) view.findViewById(R.id.bookTitle);
-//            view.setTag(viewHolder);
+            viewHolder.image = (ImageView) view.findViewById(R.id.bookImage);
+            viewHolder.tw = (TextView) view.findViewById(R.id.bookTitle);
+            view.setTag(viewHolder);
         } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.image.setImageResource(book.getImageId());
-        viewHolder.tw.setText(book.getName());
+        viewHolder.image.setImageBitmap(PictureToArray.arrayTopic(book.getImageId()));
+        viewHolder.tw.setText(book.getTitle());
         return view;
     }
 

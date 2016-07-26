@@ -2,7 +2,7 @@
 <resources>
     <integer-array name="bookImage">
         <item>@drawable/mathematics</item>
-        <item>@drawable/linear_algebrajpg</item>
+        <item>@drawable/linear_algebra</item>
         <item>@drawable/computer_intro</item>
         <item>@drawable/program_in_c</item>
         <item>@drawable/think_in_java</item>

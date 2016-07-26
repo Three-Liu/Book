@@ -38,6 +38,8 @@ public class WelcomeFragment extends Fragment {
                         .detach(getFragmentManager().findFragmentByTag(WelcomeFragment.class.getName()))
                         .add(R.id.container,new CenterFragment(),CenterFragment.class.getName())
                         .commit();
+
+
             }
         });
         return view;

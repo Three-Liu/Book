@@ -1,29 +1,24 @@
 package com.shawn.br.book;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
  * Book class (For now)
  * Created by Three on 2016/7/9.
- * version
- *      0.1 - 7/9 (Build by Three)
+ * remove number on 2016/7/22.
  */
 public class Book implements Parcelable {
-    private String name;
-
-    private String number = "default";
-    //maybe this attr no need
-
-    private int imageId;
+    private String title;
+    private byte[] imageId;
 
     public Book() {
     }
 
     protected Book(Parcel in) {
-        name = in.readString();
-        number = in.readString();
-        imageId = in.readInt();
+        title = in.readString();
+        in.readByteArray(imageId);
     }
 
     public static final Creator<Book> CREATOR = new Creator<Book>() {
@@ -38,28 +33,20 @@ public class Book implements Parcelable {
         }
     };
 
-    public int getImageId() {
+    public byte[] getImageId() {
         return imageId;
     }
 
-    public void setImageId(int imageId) {
+    public void setImageId(byte[] imageId) {
         this.imageId = imageId;
     }
 
-    public String getNumber() {
-        return number;
+    public String getTitle() {
+        return title;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String name) {
+        this.title = name;
     }
 
     @Override
@@ -69,8 +56,7 @@ public class Book implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.name);
-        dest.writeString(this.number);
-        dest.writeInt(this.imageId);
+        dest.writeString(this.title);
+        dest.writeByteArray(this.imageId);
     }
 }
