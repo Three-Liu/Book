@@ -25,6 +25,16 @@ public class Person implements Parcelable {
     private String name = "Default";
     private String gender;
     private int imageId;
+
+    public String getStorageOfBook() {
+        return storageOfBook;
+    }
+
+    public void setStorageOfBook(String storageOfBook) {
+        this.storageOfBook = storageOfBook;
+    }
+
+    private String storageOfBook = new String();
     //    private String major;
     //    private String grade;
 
@@ -61,6 +71,7 @@ public class Person implements Parcelable {
         this.name = source.readString();
         this.gender = source.readString();
         this.imageId = source.readInt();
+        this.storageOfBook = source.readString();
 //        this.major = source.readString();
 //        this.grade = source.readString();
     }
@@ -99,6 +110,7 @@ public class Person implements Parcelable {
         dest.writeString(this.name);
         dest.writeString(this.gender);
         dest.writeInt(this.imageId);
+        dest.writeString(this.storageOfBook);
     }
 
 

@@ -19,11 +19,18 @@ import java.util.List;
  */
 public class BookAdapter extends ArrayAdapter<Book> {
     private int idResource;
-
+    private List<Book> objects;
     public BookAdapter(Context context, int resource, List<Book> objects) {
         super(context, resource, objects);
         this.idResource = resource;
+        this.objects = objects;
     }
+
+    @Override
+    public int getCount() {
+        return this.objects.size();
+    }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

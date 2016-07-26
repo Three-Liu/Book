@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/top_center">
         <fragment
+            android:tag="com.shawn.br.fragment.BookFragmentSearch"
             android:name="com.shawn.br.fragment.BookFragmentSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -41,9 +41,9 @@ public class CenterFragment extends Fragment {
         view.findViewById(R.id.center_book).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.container,new BookFragment())
-                        .commit();
+//                getFragmentManager().beginTransaction()
+//                        .replace(R.id.container,new BookFragment())
+//                        .commit();
             }
         });
         return view;

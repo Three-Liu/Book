@@ -13,11 +13,9 @@
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:layout_margin="5dp"
-            android:src="@drawable/history"
             android:layout_alignParentTop="true"/>
         <TextView
             android:id="@+id/book_title"
-            android:text="中国近代史纲要"
             android:textColor="#fff"
             android:textAppearance="?android:attr/textAppearanceLargeInverse"
             android:layout_width="wrap_content"
