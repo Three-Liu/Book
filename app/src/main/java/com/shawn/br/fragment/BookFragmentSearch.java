@@ -1,6 +1,7 @@
 package com.shawn.br.fragment;
 
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,15 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.shawn.br.R;
-import com.shawn.br.book.Book;
-import com.shawn.br.book.BookAdapter;
-import com.shawn.br.data.DBOperate;
+import com.shawn.br.data.book.Book;
+import com.shawn.br.data.book.BookAdapter;
+import com.shawn.br.data.database.DataBase;
+import com.shawn.br.data.database.table.BookTable;
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class BookFragmentSearch extends Fragment {
     private String temp;
     private ListView listView;
     private BookAdapter bookAdapter;
-    private Handler handler = new Handler(){
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             Bundle bundle = msg.getData();
@@ -47,25 +47,27 @@ public class BookFragmentSearch extends Fragment {
         public void run() {
             Message message = handler.obtainMessage();
             list = new ArrayList<>();
-            DBOperate.getContext(getActivity());
-            Cursor cursor = DBOperate.searchData(temp);
-            if(cursor!=null&&cursor.moveToFirst()){
-                while(!cursor.isAfterLast()){
+            SQLiteDatabase sqLiteDatabase = DataBase.getSqliteDatabase(getActivity());
+            Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + BookTable.TABLENAME + " WHERE " + BookTable.TITLE
+                    + " = ?", new String[]{temp});
+            if (cursor != null && cursor.moveToFirst()) {
+                while (!cursor.isAfterLast()) {
                     Book book = new Book();
                     book.setTitle(cursor.getString(0));
                     book.setImageId(cursor.getBlob(1));
                     cursor.moveToNext();
                     list.add(book);
                 }
-            }else{
-                Toast.makeText(getActivity(),"No Record",Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getActivity(), "No Record", Toast.LENGTH_SHORT).show();
             }
             Bundle bundle = new Bundle();
-            bundle.putParcelableArrayList("query",list);
+            bundle.putParcelableArrayList("query", list);
             message.setData(bundle);
             handler.sendMessage(message);
         }
     };
+
     public BookFragmentSearch() {
         super();
     }
@@ -94,12 +96,12 @@ public class BookFragmentSearch extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Book book = bookAdapter.getItem(i);
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("book",book);
+                bundle.putParcelable("book", book);
                 BookFragment bookFragment = new BookFragment();
                 bookFragment.setArguments(bundle);
                 getParentFragment().getActivity().getSupportFragmentManager().beginTransaction()
                         .hide(getParentFragment())
-                        .add(R.id.container,bookFragment,BookFragment.class.getName())
+                        .add(R.id.container, bookFragment, BookFragment.class.getName())
                         .addToBackStack(BookFragment.class.getName())
                         .commit();
 
